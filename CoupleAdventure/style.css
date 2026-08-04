@@ -1,0 +1,630 @@
+/* ===================================
+   Couple Adventure
+   style.css
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"맑은 고딕",sans-serif;
+
+    background:#eef5f9;
+
+    padding:25px;
+
+}
+
+/* =====================
+      상단
+===================== */
+
+.topBar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+}
+
+.player{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.playerName{
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.playerName:hover{
+
+    color:#0b6d94;
+
+}
+
+#junuHeart,
+#hingHeart{
+
+    font-size:30px;
+
+}
+
+.resetBtn{
+
+    width:150px;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:#0b6d94;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.resetBtn:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* =====================
+      메인
+===================== */
+
+.gameLayout{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+}
+
+/* =====================
+      브루마블판
+===================== */
+
+.board{
+
+    width:820px;
+
+    height:820px;
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    grid-template-rows:repeat(5,1fr);
+
+    gap:5px;
+
+    background:#222;
+
+    padding:5px;
+
+    border-radius:18px;
+
+}
+
+/* =====================
+      칸
+===================== */
+
+.cell{
+
+    background:white;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    position:relative;
+
+    transition:.2s;
+
+    padding:8px;
+
+}
+
+.cell:hover{
+
+    transform:scale(1.04);
+
+    background:#eefaff;
+
+}
+
+.special{
+
+    background:#e4f6ff;
+
+}
+
+/* =====================
+      가운데
+===================== */
+
+.center{
+
+    grid-column:2 / 5;
+
+    grid-row:2 / 5;
+
+    z-index:1;
+
+
+    background:white;
+
+    border-radius:15px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+.center h1{
+
+    color:#0b6d94;
+
+    margin-bottom:25px;
+
+}
+
+#dice{
+
+    font-size:70px;
+
+}
+
+#diceNumber{
+
+    font-size:55px;
+
+    font-weight:bold;
+
+    margin-top:10px;
+
+}
+
+#turnArea{
+
+    margin-top:25px;
+
+    font-size:28px;
+
+}
+
+#eventArea{
+
+    width:85%;
+
+    min-height:110px;
+
+    margin-top:25px;
+
+    border-radius:12px;
+
+    background:#f6f6f6;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:15px;
+
+    font-size:20px;
+
+}
+
+/* =====================
+      오른쪽 버튼
+===================== */
+
+.rightMenu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+.roundButton{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#0b6d94;
+
+    color:white;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.roundButton:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* =====================
+      플레이어 말
+===================== */
+
+.token{
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:8px;
+
+    right:8px;
+
+}
+
+.junu{
+
+    background:#2b8cff;
+
+}
+
+.hing{
+
+    background:#ff66aa;
+
+}
+
+/* =====================
+      땅 색
+===================== */
+
+.owner-junu{
+
+    background:#dceeff !important;
+
+}
+
+.owner-hing{
+
+    background:#ffe2ef !important;
+
+}
+
+/* =====================
+      팝업
+===================== */
+
+.popup{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.45);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+.popupContent{
+
+    width:480px;
+
+    background:white;
+
+    color:black;
+ 
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+
+}
+
+.popupContent h2{
+
+    margin-bottom:20px;
+    color:#0b6d94;
+}
+
+.popupContent button{
+
+    margin-top:25px;
+
+    width:130px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#0b6d94;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+/* =====================
+      모바일
+===================== */
+
+@media (max-width:1100px){
+
+    body{
+        padding:10px;
+    }
+
+    .topBar{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .gameLayout{
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+    }
+
+    .board{
+        width:95vw;
+        height:95vw;
+        max-width:600px;
+        max-height:600px;
+    }
+
+    .center h1{
+        font-size:24px;
+    }
+
+    #turnArea{
+        font-size:18px;
+    }
+
+    #eventArea{
+        font-size:15px;
+        min-height:70px;
+    }
+
+    #dice{
+        font-size:42px;
+    }
+
+    .cell{
+        font-size:12px;
+        padding:3px;
+    }
+
+    .piece{
+        font-size:20px;
+    }
+
+    .rightMenu{
+        flex-direction:row;
+        justify-content:center;
+    }
+
+    .roundButton{
+        width:80px;
+        height:80px;
+        font-size:18px;
+    }
+
+    .popupContent{
+        width:90%;
+    }
+
+}
+
+.piece {
+
+    font-size:32px;
+
+    transition:0.3s;
+
+}
+
+
+#dice {
+
+    font-size:60px;
+
+}
+
+/* css 추가 */
+/* =====================
+   보드 위치 배치
+===================== */
+
+
+/* 왼쪽 아래 모서리 */
+#start{
+    grid-column:1;
+    grid-row:5;
+}
+
+
+/* 아래쪽 이동 */
+#c1{
+    grid-column:2;
+    grid-row:5;
+}
+
+#c2{
+    grid-column:3;
+    grid-row:5;
+}
+
+#c3{
+    grid-column:4;
+    grid-row:5;
+}
+
+
+#bonus{
+    grid-column:5;
+    grid-row:5;
+}
+
+
+/* 오른쪽 이동 */
+
+#c4{
+    grid-column:5;
+    grid-row:4;
+}
+
+#c5{
+    grid-column:5;
+    grid-row:3;
+}
+
+#c6{
+    grid-column:5;
+    grid-row:2;
+}
+
+
+#rest{
+    grid-column:5;
+    grid-row:1;
+}
+
+
+/* 위쪽 이동 */
+
+#c7{
+    grid-column:4;
+    grid-row:1;
+}
+
+#c8{
+    grid-column:3;
+    grid-row:1;
+}
+
+#c9{
+    grid-column:2;
+    grid-row:1;
+}
+
+
+#bonus2{
+    grid-column:1;
+    grid-row:1;
+}
+
+
+/* 왼쪽 이동 */
+
+#c10{
+    grid-column:1;
+    grid-row:2;
+}
+
+#c11{
+    grid-column:1;
+    grid-row:3;
+}
+
+#c12{
+    grid-column:1;
+    grid-row:4;
+}

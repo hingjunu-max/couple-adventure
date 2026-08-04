@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>💕 Couple Adventure</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- 상단 -->
+
+<header class="topBar">
+
+<div id="playerSelect">
+
+    <h3>첫 번째 플레이어 선택</h3>
+
+    <button onclick="startGame('junu')">
+        💙 주누 먼저
+    </button>
+
+    <button onclick="startGame('hing')">
+        🩷 힝이 먼저
+    </button>
+
+</div>
+
+<div class="player">
+
+<div class="playerName"
+onclick="showCards('junu')">
+
+주누
+
+</div>
+
+<div id="junuHeart">
+
+💙💙💙
+
+</div>
+
+</div>
+
+<button class="resetBtn"
+onclick="resetGame()">
+
+RESET
+
+</button>
+
+<div class="player">
+
+<div class="playerName"
+onclick="showCards('hing')">
+
+힝이
+
+</div>
+
+<div id="hingHeart">
+
+🩷🩷🩷
+
+</div>
+
+</div>
+
+</header>
+
+<div class="gameLayout">
+
+<div class="board">
+
+    <!-- 위쪽 -->
+    <div class="cell" id="c12"></div>
+    <div class="cell" id="c11"></div>
+    <div class="cell" id="c10"></div>
+    <div class="cell" id="bonus2">
+        보너스<br>카드
+    </div>
+    <div class="cell" id="c9"></div>
+
+    <div class="center">
+
+        <h1>
+            💕 Couple Adventure
+        </h1>
+
+
+        <div id="diceBox">
+
+            <div id="dice" onclick="rollDice()">
+                🎲
+            </div>
+
+            <div id="diceNumber">
+                -
+            </div>
+
+        </div>
+
+
+        <div id="turnArea">
+            현재 차례
+            <br>
+            <strong id="turnText">
+                주누
+            </strong>
+        </div>
+
+
+        <div id="eventArea">
+            게임을 시작하려면
+            굴리기를 눌러주세요.
+        </div>
+
+
+    </div>
+
+
+    <!-- 오른쪽 -->
+    <div class="cell" id="c6"></div>
+    <div class="cell" id="rest">
+        쉼터
+        <br>
+        +❤️
+    </div>
+
+
+    <div class="cell" id="c5"></div>
+    <div class="cell" id="c4"></div>
+
+
+    <!-- 아래쪽 -->
+    <div class="cell special" id="start">
+        출발
+    </div>
+
+    <div class="cell" id="c1"></div>
+    <div class="cell" id="c2"></div>
+    <div class="cell" id="c3"></div>
+
+    <div class="cell special" id="bonus">
+        보너스
+        <br>
+        카드
+    </div>
+
+
+    <!-- 오른쪽 아래 보조 -->
+    <div class="cell" id="c7"></div>
+    <div class="cell" id="c8"></div>
+
+
+</div>
+<!-- ⭐ board 닫기 -->
+
+<!-- 오른쪽 버튼 -->
+
+<div class="rightMenu">
+
+<button
+class="roundButton"
+
+onclick="drawMission()">
+
+미션!
+
+</button>
+
+
+
+<button
+class="roundButton"
+
+onclick="rollDice()">
+
+굴리기!
+
+</button>
+
+</div>
+
+</div>
+<!-- ⭐ gameLayout 닫기 -->
+
+
+<!-- 팝업 -->
+
+<div id="popup"
+
+class="popup hidden">
+
+<div class="popupContent">
+
+<h2 id="popupTitle">
+
+제목
+
+</h2>
+
+<div id="popupBody">
+
+내용
+
+</div>
+
+<button onclick="closePopup()">
+
+닫기
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+<script src="treasure.js"></script>
+
+</body>
+
+</html>
